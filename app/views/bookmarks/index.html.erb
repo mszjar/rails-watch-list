@@ -1,0 +1,21 @@
+<div class="container">
+  <fieldset>
+    <h1 class="mb-3">Bookmark a movie</h1>
+    <form action="/movie" method="get">
+      <div class="form-group d-flex mb-3">
+        <input type="search" name="query" class="form-control" placeholder="Search a list">
+        <button type="submit" class="btn btn-success">Search</button>
+      </div>
+    </form>
+    <%= link_to 'Add a movie', new_list_path, class: "btn btn-primary text-decoration-none mb-3" %>
+  </fieldset>
+</div>
+<div class="container">   
+  <div class="cards">
+  <% @lists.each do |list| %>
+      <div class="card">
+        <%= link_to list.name, list_path(list.id)%>
+      </div>
+  <% end %>
+  </div>
+</div>
