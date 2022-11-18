@@ -11,13 +11,3 @@
   <% end %>
   <%= link_to 'Return to the main menu', lists_path, class: "btn btn-info text-decoration-none mt-4" %>
 </div>
-<div class="container">
-  <div class="card">
-    <% if list.photo.attached? %>
-      <%= cl_image_tag list.photo.key, width: 300, height: 200, crop: :fill %>
-    <% else %>
-      <%= image_tag "default_image.png", width: 300, height: 200, crop: :fill%>
-    <% end %>
-    <%= list.name%>
-  </div>
-</div>
