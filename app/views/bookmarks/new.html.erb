@@ -6,11 +6,3 @@
     <%= f.submit "Add movie", class: "btn btn-primary text-decoration-none mb-3"  %>
   <% end %>
 </div>
-<div class="container">
-  <%= cl_image_tag("rkh1brepwgjmakoviipa",
-        width: 400, height: 300, crop: :fill) %>
-
-  <!-- for face detection -->
-  <%= cl_image_tag("developement/cld-sample",
-        width: 150, height: 150, crop: :thumb, gravity: :face) %>
-</div>
