@@ -12,15 +12,17 @@
 </div>
 <div class="container">
   <div class="cards">
-  <% @lists.each do |list| %>
-      <div class="card">
-      <% if list.photo.attached? %>
-        <%= cl_image_tag list.photo.key, crop: :fill %>
-      <% else %>
-        <%= image_tag "default_image.png"%>
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list.id) do %>
+          <div class="card">
+            <% if list.photo.attached? %>
+              <%= cl_image_tag list.photo.key, width: 300, height: 200, crop: :fill %>
+            <% else %>
+              <%= image_tag "default_image.png", width: 300, height: 200, crop: :fill%>
+            <% end %>
+            <%= list.name%>
+          </div>
       <% end %>
-        <%= link_to list.name, list_path(list.id)%>
-      </div>
-  <% end %>
+    <% end %>
   </div>
 </div>

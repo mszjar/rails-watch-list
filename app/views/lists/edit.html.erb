@@ -1,2 +1,13 @@
-<h1>Lists#edit</h1>
-<p>Find me in app/views/lists/edit.html.erb</p>
+<div class="container">
+  <h1>Edit list</h1>
+  <%= simple_form_for @list, class: "form-group" do |f| %>
+    <div class="mb-3">
+      <%= f.input :name, class: "form-control" %>
+      <%= f.input :photo, as: :file %>
+    </div>
+    <div>
+     <%= f.submit 'Edit', class: "btn btn-primary text-decoration-none mt-3" %>
+    </div>
+  <% end %>
+  <%= link_to 'Return to the main menu', lists_path, class: "btn btn-info text-decoration-none mt-4" %>
+</div>
