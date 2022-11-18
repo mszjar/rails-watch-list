@@ -14,7 +14,11 @@
   <div class="cards">
   <% @lists.each do |list| %>
       <div class="card">
+      <% if list.photo.attached? %>
         <%= cl_image_tag list.photo.key, crop: :fill %>
+      <% else %>
+        <%= image_tag "default_image.png"%>
+      <% end %>
         <%= link_to list.name, list_path(list.id)%>
       </div>
   <% end %>
