@@ -1,9 +1,9 @@
 <div class="container">
   <h1>New list</h1>
-  <%= form_with model: @list, class: "form-group" do |f| %>
+  <%= simple_form_for @list, class: "form-group" do |f| %>
     <div class="mb-3">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control" %>
+      <%= f.input :name, class: "form-control" %>
+      <%= f.input :photo, as: :file %>
     </div>
     <div>
      <%= f.submit 'Create', class: "btn btn-primary text-decoration-none mt-3" %>
